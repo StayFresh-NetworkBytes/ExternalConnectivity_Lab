@@ -7,7 +7,7 @@ This lab demonstrates how to setup the NAT or Bridge connector to provide intern
 ## NAT Type connector
 
 Orange 
-Interfaces connected to <span style="color: #F58926">NAT mode connector are orange</span>
+Interfaces connected to <span style="color: Orange">NAT mode connector are orange</span>
 
 Aqua
-Interfaces connected to <span style="color: #00CCC1">bridge mode connector are aqua</span>
+Interfaces connected to <span style="color: Aqua">bridge mode connector are aqua</span>
