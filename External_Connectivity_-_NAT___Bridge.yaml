@@ -1,0 +1,813 @@
+annotations:
+  - border_color: '#FFFFFF00'
+    border_style: ''
+    color: '#F58926'
+    thickness: 1
+    type: ellipse
+    x1: -280.0
+    y1: 240.0
+    x2: 40.0
+    y2: 40.0
+    z_index: 0
+  - border_color: '#FFFFFF00'
+    border_style: ''
+    color: '#00CCC1'
+    thickness: 1
+    type: ellipse
+    x1: -280.0
+    y1: 360.0
+    x2: 40.0
+    y2: 40.0
+    z_index: 0
+  - border_color: '#00000000'
+    border_style: ''
+    color: '#000000'
+    rotation: 0
+    text_bold: false
+    text_content: Interfaces using Bridge External Connector
+    text_font: monospace
+    text_italic: false
+    text_size: 12
+    text_unit: pt
+    thickness: 1
+    type: text
+    x1: -198.36035352827358
+    y1: 240.0
+    z_index: 1
+  - border_color: '#00000000'
+    border_style: ''
+    color: '#000000'
+    rotation: 0
+    text_bold: false
+    text_content: Interfaces using NAT External Connector
+    text_font: monospace
+    text_italic: false
+    text_size: 12
+    text_unit: pt
+    thickness: 1
+    type: text
+    x1: -200.0
+    y1: 360.0
+    z_index: 1
+  - border_color: '#FFFFFF00'
+    border_style: ''
+    color: '#00CCC1'
+    thickness: 1
+    type: ellipse
+    x1: 46.72589215934148
+    y1: 121.29180218606658
+    x2: 12.5
+    y2: 12.5
+    z_index: 0
+  - border_color: '#FFFFFF00'
+    border_style: ''
+    color: '#00CCC1'
+    thickness: 1
+    type: ellipse
+    x1: 55.43663641683038
+    y1: -15.80990925049118
+    x2: 12.5
+    y2: 12.5
+    z_index: 0
+  - border_color: '#FFFFFF00'
+    border_style: ''
+    color: '#00CCC1'
+    thickness: 1
+    type: ellipse
+    x1: 110.94391396901722
+    y1: 120.11927949868938
+    x2: 12.5
+    y2: 12.5
+    z_index: 0
+  - border_color: '#FFFFFF00'
+    border_style: ''
+    color: '#F58926'
+    thickness: 1
+    type: ellipse
+    x1: 52.27528878510306
+    y1: 95.8101725412194
+    x2: 12.5
+    y2: 12.5
+    z_index: 0
+  - border_color: '#FFFFFF00'
+    border_style: ''
+    color: '#F58926'
+    thickness: 1
+    type: ellipse
+    x1: 48.7793287077071
+    y1: -40.413893016497866
+    x2: 12.5
+    y2: 12.5
+    z_index: 0
+  - border_color: '#FFFFFF00'
+    border_style: ''
+    color: '#F58926'
+    thickness: 1
+    type: ellipse
+    x1: 111.99463395836433
+    y1: -39.77424654477145
+    x2: 12.5
+    y2: 12.5
+    z_index: 0
+  - border_color: '#FFFFFF00'
+    border_style: ''
+    color: '#F58926'
+    thickness: 1
+    type: ellipse
+    x1: -121.6654027306139
+    y1: -30.228538787309567
+    x2: 40.0
+    y2: 40.0
+    z_index: 0
+  - border_color: '#FFFFFF00'
+    border_style: ''
+    color: '#00CCC1'
+    thickness: 1
+    type: ellipse
+    x1: -118.10681684370833
+    y1: 131.34848187490726
+    x2: 40.0
+    y2: 40.0
+    z_index: 0
+nodes:
+  - boot_disk_size: null
+    configuration:
+      - name: default
+        content: System Bridge
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: bridge
+    node_definition: external_connector
+    parameters: {}
+    ram: null
+    tags: []
+    x: -280
+    y: 120
+    interfaces:
+      - id: i0
+        label: port
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: iosxe_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 6893 bytes\n\
+          !\n! Last configuration change at 15:04:11 UTC Mon Jul 22 2024 by cisco\n\
+          !\nversion 17.13\nservice timestamps debug datetime msec\nservice timestamps\
+          \ log datetime msec\nplatform qfp utilization monitor load 80\nplatform\
+          \ punt-keepalive disable-kernel-core\nplatform sslvpn use-pd\nplatform console\
+          \ serial\n!\nhostname internet_nat\n!\nboot-start-marker\nboot-end-marker\n\
+          !\n!\nvrf definition management\n !\n address-family ipv4\n exit-address-family\n\
+          !\nno logging console\nno aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\n!\nip domain name extconnect.lab\n!\n!\n!\nlogin on-success log\n!\n\
+          !\nsubscriber templating\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\npae\n!\n!\n\
+          crypto pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n revocation-check\
+          \ crl\n hash sha256\n!\ncrypto pki trustpoint TP-self-signed-1439521225\n\
+          \ enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-1439521225\n\
+          \ revocation-check none\n rsakeypair TP-self-signed-1439521225\n hash sha256\n\
+          !\n!\ncrypto pki certificate chain SLA-TrustPoint\n certificate ca 01\n\
+          \  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363\n\
+          \  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934\n\
+          \  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305\n\
+          \  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720\n\
+          \  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n\
+          \  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n\
+          \  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n\
+          \  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n\
+          \  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n\
+          \  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n\
+          \  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n\
+          \  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n\
+          \  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n\
+          \  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201\n\
+          \  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85\n\
+          \  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n\
+          \  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n\
+          \  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n\
+          \  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n\
+          \  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n\
+          \  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n\
+          \  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n\
+          \  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n\
+          \  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n\
+          \  D697DF7F 28\n  \tquit\ncrypto pki certificate chain TP-self-signed-1439521225\n\
+          \ certificate self-signed 01\n  30820330 30820218 A0030201 02020101 300D0609\
+          \ 2A864886 F70D0101 0B050030\n  31312F30 2D060355 04030C26 494F532D 53656C66\
+          \ 2D536967 6E65642D 43657274\n  69666963 6174652D 31343339 35323132 3235301E\
+          \ 170D3234 30373232 31323532\n  30395A17 0D333430 37323231 32353230 395A3031\
+          \ 312F302D 06035504 030C2649\n  4F532D53 656C662D 5369676E 65642D43 65727469\
+          \ 66696361 74652D31 34333935\n  32313232 35308201 22300D06 092A8648 86F70D01\
+          \ 01010500 0382010F 00308201\n  0A028201 010097B2 EAE930E6 5EC64993 03A0C95E\
+          \ 6542B633 05720FCE DD9D3BC4\n  2ECC0931 6741B431 B2E9027A D3981827 564A5A85\
+          \ 8A1BF003 45F40961 32852A8F\n  E0782624 2B4CD8BB 4C7BF7FB 9F3A3E18 A38B625A\
+          \ B95C231E 8276EC82 34F20E74\n  473884DE 3C47B2D2 8352D011 1C973219 C300279D\
+          \ ECC4581E 899C028C 631399EC\n  7A410E1A 14A5018F 99470B9B B7410112 AF5FF00A\
+          \ 9CA876B5 8A17B19E 8DCEB34C\n  A45A401C 38C0FE39 B68FC4B0 497A3B0D 8DC31CA1\
+          \ B8819D23 8C222A70 85B4AB44\n  E9683286 6A7C58A1 17F082CF 47C59411 091A2AD7\
+          \ 38D06F19 E40D3EF9 326DC1E9\n  17593E53 539B0B42 639F7894 A020C00C CCFFA165\
+          \ 81BA0876 076D73E3 030CD8C3\n  4DEA7E4B 384D0203 010001A3 53305130 1D060355\
+          \ 1D0E0416 0414CE0F B8AA00A1\n  C6585AA1 4D16D39B 5B2E0879 14A7301F 0603551D\
+          \ 23041830 168014CE 0FB8AA00\n  A1C6585A A14D16D3 9B5B2E08 7914A730 0F060355\
+          \ 1D130101 FF040530 030101FF\n  300D0609 2A864886 F70D0101 0B050003 82010100\
+          \ 94FA31BF 2C3C0B51 31A4CDE1\n  03B9631C 315D93AB 2FCDF036 CBD39B62 AC9C1549\
+          \ 32C8CEE4 B03EA478 BAE83C37\n  74842AFA 9565FB28 641EF9A4 283F827C 8E661662\
+          \ 5DBA628C 0B040E92 1AFAE3E1\n  74F75F6D 68C7EF13 BE305262 5853D486 ACFE1486\
+          \ 2A0899DC E4AE1412 9E77D737\n  CB3165F2 27351FF2 C9D61C5A 5FE7EE9D E5BA2E27\
+          \ B636236B 566922CD 8E745495\n  9389DB3D 03796DD7 09AD3440 50A64398 05610516\
+          \ 0F0E04F1 9C8B13D9 FFA43D85\n  059F3424 13422FD1 6F6775F1 36F9DEA0 3CA7D46D\
+          \ 4F8B266F 7293AEA0 4F954E05\n  28EB518F 00B2777A C8356DF3 06ED0DF2 E747A302\
+          \ F7524805 A92A4E0E 7A608A2A\n  4A25760B EC6A0DB0 182AECCD 1B00DE32 1D400D8A\n\
+          \  \tquit\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlicense udi pid C8000V sn 9W0YNF3A2Z3\n\
+          license boot level network-advantage addon dna-advantage\nmemory free low-watermark\
+          \ processor 201711\ndiagnostic bootup level minimal\n!\n!\nspanning-tree\
+          \ extend system-id\n!\n!\nusername cisco privilege 15 secret 9 $9$u1oC3V/QCAjaDU$iozBm7pNj.TKErmWiccHXLQeJDy0cH.PU5Wa4PY3sE2\n\
+          !\nredundancy\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\ninterface GigabitEthernet1\n ip address dhcp\n ip nat outside\n\
+          \ negotiation auto\n no mop enabled\n no mop sysid\n!\ninterface GigabitEthernet2\n\
+          \ description UbuntuHost\n ip address 172.18.1.254 255.255.255.0\n ip nat\
+          \ inside\n negotiation auto\n no mop enabled\n no mop sysid\n!\ninterface\
+          \ GigabitEthernet3\n no ip address\n shutdown\n negotiation auto\n no mop\
+          \ enabled\n no mop sysid\n!\ninterface GigabitEthernet4\n no ip address\n\
+          \ shutdown\n negotiation auto\n no mop enabled\n no mop sysid\n!\ninterface\
+          \ GigabitEthernet5\n no ip address\n shutdown\n negotiation auto\n no mop\
+          \ enabled\n no mop sysid\n!\ninterface GigabitEthernet6\n no ip address\n\
+          \ shutdown\n negotiation auto\n no mop enabled\n no mop sysid\n!\ninterface\
+          \ GigabitEthernet7\n no ip address\n shutdown\n negotiation auto\n no mop\
+          \ enabled\n no mop sysid\n!\ninterface GigabitEthernet8\n vrf forwarding\
+          \ management\n ip address 192.168.1.204 255.255.255.0\n negotiation auto\n\
+          \ no mop enabled\n no mop sysid\n!\nip forward-protocol nd\n!\nno ip http\
+          \ server\nip http secure-server\nip route 0.0.0.0 0.0.0.0 192.168.255.1\n\
+          ip route vrf management 0.0.0.0 0.0.0.0 192.168.1.1\nip nat inside source\
+          \ list 10 interface GigabitEthernet1 overload\nip ssh bulk-mode 131072\n\
+          !\n!\nip access-list standard 10\n 10 permit 172.18.1.0 0.0.0.255\n!\n!\n\
+          !\n!\ncontrol-plane\n!\n!\nmgcp behavior rsip-range tgcp-only\nmgcp behavior\
+          \ comedia-role none\nmgcp behavior comedia-check-media-src disable\nmgcp\
+          \ behavior comedia-sdp-force disable\n!\nmgcp profile default\n!\n!\n!\n\
+          !\n!\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n login local\n\
+          \ stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n login local\n\
+          \ length 0\n transport input ssh\n!\n!\n!\n!\n!\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: internet_nat
+    node_definition: cat8000v
+    parameters: {}
+    ram: null
+    tags: []
+    x: 80
+    y: -40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: GigabitEthernet1
+        slot: 0
+        type: physical
+      - id: i2
+        label: GigabitEthernet2
+        slot: 1
+        type: physical
+      - id: i3
+        label: GigabitEthernet3
+        slot: 2
+        type: physical
+      - id: i4
+        label: GigabitEthernet4
+        slot: 3
+        type: physical
+      - id: i5
+        label: GigabitEthernet5
+        slot: 4
+        type: physical
+      - id: i6
+        label: GigabitEthernet6
+        slot: 5
+        type: physical
+      - id: i7
+        label: GigabitEthernet7
+        slot: 6
+        type: physical
+      - id: i8
+        label: GigabitEthernet8
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: switch2
+    node_definition: unmanaged_switch
+    parameters: {}
+    ram: null
+    tags: []
+    x: -120
+    y: 120
+    interfaces:
+      - id: i0
+        label: port0
+        slot: 0
+        type: physical
+      - id: i1
+        label: port1
+        slot: 1
+        type: physical
+      - id: i2
+        label: port2
+        slot: 2
+        type: physical
+      - id: i3
+        label: port3
+        slot: 3
+        type: physical
+      - id: i4
+        label: port4
+        slot: 4
+        type: physical
+      - id: i5
+        label: port5
+        slot: 5
+        type: physical
+      - id: i6
+        label: port6
+        slot: 6
+        type: physical
+      - id: i7
+        label: port7
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: user-data
+        content: |-
+          #cloud-config
+          hostname: ubuntu-host
+          manage_etc_hosts: true
+          system_info:
+            default_user:
+              name: cisco
+          password: cisco
+          chpasswd: { expire: False }
+          ssh_pwauth: True
+          ssh_authorized_keys:
+            - your-ssh-pubkey-line-goes-here
+          write_files:
+          - path: /etc/netplan/network.yaml
+            permissions: '0600'
+            content: |
+              network:
+                  version: 2
+                  ethernets:
+                      ens2:
+                          dhcp4: false
+                          addresses:
+                            - 172.18.1.100/24
+                          routes:
+                            - to: default
+                              via: 172.18.1.254
+                          nameservers:
+                            addresses:
+                              - 9.9.9.9
+          runcmd:
+          - sudo netplan generate
+          - sudo netplan apply
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: ubuntu_host-Nat
+    node_definition: ubuntu
+    parameters: {}
+    ram: null
+    tags: []
+    x: 320
+    y: -40
+    interfaces:
+      - id: i0
+        label: ens2
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: nxos_config.txt
+        content: |2-
+
+          !Command: show running-config
+          !Running configuration last done at: Mon Jul 22 15:03:49 2024
+          !Time: Mon Jul 22 15:03:50 2024
+
+          version 10.4(2) Bios:version
+          hostname nxos_nat_mgmt
+          vdc nxos_nat_mgmt id 1
+            limit-resource vlan minimum 16 maximum 4094
+            limit-resource vrf minimum 2 maximum 4097
+            limit-resource port-channel minimum 0 maximum 511
+            limit-resource m4route-mem minimum 58 maximum 58
+            limit-resource m6route-mem minimum 8 maximum 8
+
+          feature interface-vlan
+
+          no password strength-check
+          username admin password 5 $5$LEAFKB$KRputfqAsDuViO2g40sddg1aizA3Wyj.6MmZcwlPkq9  role network-admin
+          username cisco password 5 $5$FOJKKP$VxkgRd.VLEJXKNoCFoz4W4jHg0pDI07Nc0Tp4Cs5iC.  role network-admin
+          username cisco passphrase  lifetime 99999 warntime 14 gracetime 3
+          ip domain-lookup
+          snmp-server user admin network-admin auth md5 4956061DF4887E7DE8542AA5AE6DDB5AEEDB priv aes-128 330C5E13B9D12632AD577D8AB451C527F59D localizedV2key
+          snmp-server user cisco network-admin auth md5 52135053BAC6382CAE5556E1B048DA36BBC6 priv aes-128 3229091CF4F01243C163488DEA1FDB62A181 localizedV2key
+          rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
+          rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL
+          rmon event 3 log trap public description ERROR(3) owner PMON@ERROR
+          rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
+          rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
+
+          ip route 0.0.0.0/0 192.168.1.1
+          vlan 1,400
+
+          vrf context management
+            ip name-server 192.168.255.1
+            ip route 0.0.0.0/0 192.168.255.1
+
+          interface Vlan1
+
+          interface Vlan400
+            no shutdown
+            ip address 192.168.1.206/24
+
+          interface Ethernet1/1
+            switchport access vlan 400
+            spanning-tree port type normal
+
+          interface Ethernet1/2
+            description Ubuntu_host-NoNat
+            switchport access vlan 400
+            spanning-tree port type edge
+
+          interface Ethernet1/3
+
+          interface Ethernet1/4
+
+          interface Ethernet1/5
+
+          interface Ethernet1/6
+
+          interface Ethernet1/7
+
+          interface Ethernet1/8
+
+          interface Ethernet1/9
+
+          interface Ethernet1/10
+
+          interface Ethernet1/11
+
+          interface Ethernet1/12
+
+          interface Ethernet1/13
+
+          interface Ethernet1/14
+
+          interface Ethernet1/15
+
+          interface Ethernet1/16
+
+          interface Ethernet1/17
+
+          interface Ethernet1/18
+
+          interface Ethernet1/19
+
+          interface Ethernet1/20
+
+          interface Ethernet1/21
+
+          interface Ethernet1/22
+
+          interface Ethernet1/23
+
+          interface Ethernet1/24
+
+          interface Ethernet1/25
+
+          interface Ethernet1/26
+
+          interface Ethernet1/27
+
+          interface Ethernet1/28
+
+          interface Ethernet1/29
+
+          interface Ethernet1/30
+
+          interface Ethernet1/31
+
+          interface Ethernet1/32
+
+          interface Ethernet1/33
+
+          interface Ethernet1/34
+
+          interface Ethernet1/35
+
+          interface Ethernet1/36
+
+          interface Ethernet1/37
+
+          interface Ethernet1/38
+
+          interface Ethernet1/39
+
+          interface Ethernet1/40
+
+          interface Ethernet1/41
+
+          interface Ethernet1/42
+
+          interface Ethernet1/43
+
+          interface Ethernet1/44
+
+          interface Ethernet1/45
+
+          interface Ethernet1/46
+
+          interface Ethernet1/47
+
+          interface Ethernet1/48
+
+          interface Ethernet1/49
+
+          interface Ethernet1/50
+
+          interface Ethernet1/51
+
+          interface Ethernet1/52
+
+          interface Ethernet1/53
+
+          interface Ethernet1/54
+
+          interface Ethernet1/55
+
+          interface Ethernet1/56
+
+          interface Ethernet1/57
+
+          interface Ethernet1/58
+
+          interface Ethernet1/59
+
+          interface Ethernet1/60
+
+          interface Ethernet1/61
+
+          interface Ethernet1/62
+
+          interface Ethernet1/63
+
+          interface Ethernet1/64
+
+          interface mgmt0
+            description Internet_NAT
+            ip address dhcp
+            vrf member management
+          icam monitor scale
+
+          line console
+            exec-timeout 0
+          line vty
+            exec-timeout 0
+          event manager applet BOOTCONFIG
+            event syslog pattern "Configured from vty"
+            action 1.0 cli python bootflash:set_boot.py
+
+          no logging console
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n4
+    image_definition: null
+    label: nxos_nat_mgmt
+    node_definition: nxosv9000
+    parameters: {}
+    ram: null
+    tags: []
+    x: 81
+    y: 120
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: mgmt0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet1/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet1/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet1/3
+        slot: 3
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n5
+    image_definition: null
+    label: NAT
+    node_definition: external_connector
+    parameters: {}
+    ram: null
+    tags: []
+    x: -280
+    y: -40
+    interfaces:
+      - id: i0
+        label: port
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n6
+    image_definition: null
+    label: switch1
+    node_definition: unmanaged_switch
+    parameters: {}
+    ram: null
+    tags: []
+    x: -120
+    y: -40
+    interfaces:
+      - id: i0
+        label: port0
+        slot: 0
+        type: physical
+      - id: i1
+        label: port1
+        slot: 1
+        type: physical
+      - id: i2
+        label: port2
+        slot: 2
+        type: physical
+      - id: i3
+        label: port3
+        slot: 3
+        type: physical
+      - id: i4
+        label: port4
+        slot: 4
+        type: physical
+      - id: i5
+        label: port5
+        slot: 5
+        type: physical
+      - id: i6
+        label: port6
+        slot: 6
+        type: physical
+      - id: i7
+        label: port7
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: user-data
+        content: |-
+          #cloud-config
+          hostname: ubuntu-host-NoNat
+          manage_etc_hosts: true
+          system_info:
+            default_user:
+              name: cisco
+          password: cisco
+          chpasswd: { expire: False }
+          ssh_pwauth: True
+          ssh_authorized_keys:
+            - your-ssh-pubkey-line-goes-here
+          write_files:
+          - path: /etc/netplan/network.yaml
+            permissions: '0600'
+            content: |
+              network:
+                  version: 2
+                  ethernets:
+                      ens2:
+                          dhcp4: false
+                          addresses:
+                            - 192.168.1.205/24
+                          routes:
+                            - to: default
+                              via: 192.168.1.1
+                          nameservers:
+                            addresses:
+                              - 9.9.9.9
+          runcmd:
+          - sudo netplan generate
+          - sudo netplan apply
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n7
+    image_definition: null
+    label: ubuntu_host-NoNat
+    node_definition: ubuntu
+    parameters: {}
+    ram: null
+    tags: []
+    x: 320
+    y: 120
+    interfaces:
+      - id: i0
+        label: ens2
+        slot: 0
+        type: physical
+links:
+  - id: l0
+    n1: n0
+    n2: n2
+    i1: i0
+    i2: i0
+    conditioning: {}
+    label: bridge-port<->switch2-port0
+  - id: l1
+    n1: n2
+    n2: n1
+    i1: i1
+    i2: i8
+    conditioning: {}
+    label: switch2-port1<->internet_nat-GigabitEthernet8
+  - id: l2
+    n1: n3
+    n2: n1
+    i1: i0
+    i2: i2
+    conditioning: {}
+    label: ubuntu-0-ens2<->internet_nat-GigabitEthernet2
+  - id: l3
+    n1: n5
+    n2: n6
+    i1: i0
+    i2: i0
+    conditioning: {}
+    label: NAT-port<->switch1-port0
+  - id: l4
+    n1: n6
+    n2: n1
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: switch1-port1<->internet_nat-GigabitEthernet1
+  - id: l5
+    n1: n6
+    n2: n4
+    i1: i2
+    i2: i1
+    conditioning: {}
+    label: switch1-port2<->nxos_nat_mgmt-mgmt0
+  - id: l6
+    n1: n2
+    n2: n4
+    i1: i2
+    i2: i2
+    conditioning: {}
+    label: switch2-port2<->nxos_nat_mgmt-Ethernet1/1
+  - id: l7
+    n1: n7
+    n2: n4
+    i1: i0
+    i2: i3
+    conditioning: {}
+    label: ubuntu_host-NoNat-ens2<->nxos_nat_mgmt-Ethernet1/2
+lab:
+  description: ''
+  notes: ''
+  title: External Connectivity - NAT / Bridge
+  version: 0.2.2
